@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infix - Calculator</title>
+</head>
+<body>
+
+    <form>
+    <input type="text" id="display" name="operation" > 
+    <span id="output"> 0 </span>
+    <br> <br>
+    
+    <button type="button" id="plus">+</button>
+    <button type="button" id="minus">-</button>
+    <button type="button" id="multiply">*</button>
+    <button type="button" id="divide">/</button> <br>
+    <br>
+    <button type="button" id="submit">====</button>
+    <button type="reset" id="reset">Reset</button>
+    </form>
+
+    <script>
+        
+        // document.getElementById("display").addEventListener('keyup', e => {
+        //     a = e.target.value;
+        //     document.getElementById("plus").addEventListener('click', e1 => {
+        //         e.innerHTML = parseInt(a)+12;
+        //     })
+        // })
+        var p = document.getElementById("plus")
+            
+        document.onkeydown = function(e) {
+           if(e.key == '1' || e.key == 'Backspace' || e.key == '2' || e.key == '3' || e.key == '4' || e.key == '5' || e.key == '6' || e.key == '7' || e.key == '8' || e.key == '9' || e.key == '0')
+           return e.key
+           else
+           
+           alert("invalid")
+           return null
+        }
+
+
+            
+            
+            
+            document.getElementById("reset").addEventListener('click' , e => {
+                document.getElementById("output").innerHTML = 0
+            })
+
+            
+        function plus() {
+            
+            var sum = 0;
+            document.getElementById("display").value += "+"
+            
+            document.getElementById("submit").addEventListener('click' , e => {
+                var displaysplit = document.getElementById("display").value.split("+")
+                console.log(displaysplit)
+                for(var i=0; i<displaysplit.length; i++)
+                {
+                var op = displaysplit[i]
+                sum = sum + parseInt(op)
+                }
+                document.getElementById("output").innerHTML = sum
+
+            })
+        }
+       // }
+       //else{
+        // document.getElementById("display").value = '0'
+        //}
+        //})
+       
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #number{
+            width: 150px;
+            border: 1px solid black;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="number"></div>
+    
+    <div id="output"></div>
+    
+<script>
+ 
+ document.onkeydown = function(e) {
+    console.log(e);
+     if(e.keyCode == 49 )
+         document.getElementById("number").innerHTML += 1;
+     if(e.keyCode == 50)
+         document.getElementById("number").innerHTML += 2;
+     if(e.keyCode == 51 )
+         document.getElementById("number").innerHTML += 3;
+     if(e.keyCode == 52)
+         document.getElementById("number").innerHTML += 4
+     if(e.keyCode == 53 )
+         document.getElementById("number").innerHTML += 5;
+     if(e.keyCode == 54)
+         document.getElementById("number").innerHTML += 6
+     if(e.keyCode == 55 )
+         document.getElementById("number").innerHTML += 7;
+     if(e.keyCode == 56)
+         document.getElementById("number").innerHTML += 8
+     if(e.keyCode == 57 )
+         document.getElementById("number").innerHTML += 9;
+
+
+     if(e.keyCode == 187)
+         document.getElementById("output").innerHTML = parseInt(document.getElementById("number").innerHTML)  + 5
+ }
+ 
+</script>
+</body>
+</html>

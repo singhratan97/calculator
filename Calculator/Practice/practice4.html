@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #number1{
+        width: 150px;
+        height: 30px;
+        background-color: rgb(163, 131, 131);
+    }
+    </style>
+    
+</head>
+<body>
+    <div id="number1" ></div> <br>
+    <form >
+    <input type="text" id = "input">
+    <button type="reset" id = "submit">submit</button> </form>
+    <div class="output" id = "output">output</div>
+
+
+    <script>
+        input = document.getElementById("input")
+        number1 = document.getElementById("number1")
+        submit = document.getElementById("submit")
+        output = document.getElementById("output")
+        var number;
+
+        input.addEventListener("keydown", e => {
+            if(e.key == '+' || e.key == '1' || e.key == '2' || e.key == '3' || e.key == '4' || e.key == '5' || e.key == '6' || e.key == '7' || e.key == '8' || e.key == '9' || e.key == '0')
+            {
+            number1.innerHTML += e.key;
+            }
+            else
+            //alert("enter a valid number")
+            input.value = ""
+            
+            
+        })
+
+        submit.addEventListener('click', e => {
+            var sum = 0;
+
+            number = number1.innerHTML.split('+')
+            console.log(number)
+             for(let i=0 ; i<number.length ; i++)
+             if(typeof(parseInt(number[i])) != Number)
+             sum = sum + parseInt(number[i]);
+           // var a = parseInt(number[0]) + parseInt(number[1])
+            //console.log(sum);
+            number1.innerHTML = sum
+            //output.innerHTML = a;
+            for(let i=0; i<number.length; i++ )
+            if(typeof(parseInt(number)) != Number)
+            console.log(number[i])
+        })
+
+
+    </script>
+
+</body>
+</html>
+
+<!-- <div id = "main">
+            <input type="text" id="input"> <br> <br>
+    <div class="buttons">
+        <button type="button" id="add">+++++</button>
+        <button type="button" id="sub">-----</button>
+        <button type="button" id="mul">*****</button>
+        <button type="button" id="div">/////</button>
+        <button type="button" id="mod">%%%%%</button>
+    </div>
+    
+    <br> <br>
+
+    <button type="button" id="equal">=====</button> <br> <br>
+    <div id="output">OUTPUT</div>
+        </div> -->
